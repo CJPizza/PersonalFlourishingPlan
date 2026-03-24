@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -190,20 +189,23 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(247,245,240,0.9);
+  background: rgba(247,245,240,0.95);
   backdrop-filter: blur(16px);
   border-bottom: 1.5px solid var(--border);
-  padding: 0 28px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0;
   overflow-x: auto;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
-.nav::-webkit-scrollbar { display: none; }
+.nav::-webkit-scrollbar { height: 3px; }
+.nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 .nav-item {
-  padding: 12px 16px;
-  font-size: 0.78rem;
+  padding: 11px 13px;
+  font-size: 0.75rem;
   font-weight: 500;
   color: var(--text-secondary);
   text-decoration: none;
