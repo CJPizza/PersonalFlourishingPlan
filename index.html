@@ -37,7 +37,7 @@ body {
 
 /* Fallback for anchor links if JS is disabled - pushes content down so nav doesn't cover it */
 [id] {
-  scroll-margin-top: 140px; 
+  scroll-margin-top: 100px; 
 }
 
 /* ── BLOBS ── */
@@ -193,26 +193,26 @@ body {
 /* ── NAV ── */
 .nav {
   position: sticky;
-  top: 20px;
+  top: 20px; 
   z-index: 100;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   border: 1.5px solid var(--border);
-  border-radius: 999px;
+  border-radius: 999px; 
   padding: 8px 24px;
   margin: 0 auto 40px auto;
-  max-width: 95%;
+  max-width: 95%; 
   width: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 4px 12px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg); 
 }
 .nav-item {
   padding: 8px 12px;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-secondary);
   text-decoration: none;
@@ -227,7 +227,7 @@ body {
 .wrapper {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 40px 28px 72px;
+  padding: 40px 28px 72px; 
   position: relative;
   z-index: 1;
 }
@@ -439,7 +439,7 @@ body {
 }
 
 .p-card-body {
-  padding: 20px 24px 24px;
+  padding: 20px 24px 24px; 
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -591,18 +591,9 @@ footer {
 
 <nav class="nav">
   <a class="nav-item" href="#summary">About Me</a>
-  <a class="nav-item" href="#philosophical">Philosophical</a>
-  <a class="nav-item" href="#psychological">Psychological</a>
-  <a class="nav-item" href="#sociological">Sociological</a>
-  <a class="nav-item" href="#anthropological">Anthropological</a>
-  <a class="nav-item" href="#oriental">Oriental</a>
-  <a class="nav-item" href="#body">Body</a>
-  <a class="nav-item" href="#sexual">Sexual &amp; Gender</a>
-  <a class="nav-item" href="#economic">Economic</a>
-  <a class="nav-item" href="#digital">Digital</a>
-  <a class="nav-item" href="#political">Political</a>
-  <a class="nav-item" href="#spiritual">Spiritual</a>
-  <a class="nav-item" href="#gallery">My Life</a>
+  <a class="nav-item" href="#perspectives">The Five Perspectives</a>
+  <a class="nav-item" href="#dimensions">The Six Dimensions</a>
+  <a class="nav-item" href="#gallery">A Look Into My Life</a>
 </nav>
 
 <section id="summary">
@@ -657,7 +648,7 @@ footer {
   </div>
 </section>
 
-<section>
+<section id="perspectives">
   <div class="wrapper">
     <div class="sec-header">
       <div class="sec-emoji">🔭</div>
@@ -667,7 +658,7 @@ footer {
 
     <div class="card-grid">
 
-      <div class="p-card top-coral" id="philosophical">
+      <div class="p-card top-coral">
         <div class="p-card-header">
           <div class="p-card-icon icon-coral">🧠</div>
           <div class="p-card-meta">
@@ -692,7 +683,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-sky" id="psychological">
+      <div class="p-card top-sky">
         <div class="p-card-header">
           <div class="p-card-icon icon-sky">🪞</div>
           <div class="p-card-meta">
@@ -717,7 +708,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-mint" id="sociological">
+      <div class="p-card top-mint">
         <div class="p-card-header">
           <div class="p-card-icon icon-mint">🌐</div>
           <div class="p-card-meta">
@@ -742,7 +733,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-lemon" id="anthropological">
+      <div class="p-card top-lemon">
         <div class="p-card-header">
           <div class="p-card-icon icon-lemon">🏛️</div>
           <div class="p-card-meta">
@@ -767,7 +758,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-lavender" id="oriental">
+      <div class="p-card top-lavender">
         <div class="p-card-header">
           <div class="p-card-icon icon-lavender">☯️</div>
           <div class="p-card-meta">
@@ -796,7 +787,7 @@ footer {
   </div>
 </section>
 
-<section class="dim-section">
+<section class="dim-section" id="dimensions">
   <div class="wrapper">
     <div class="sec-header">
       <div class="sec-emoji">🌱</div>
@@ -806,7 +797,7 @@ footer {
 
     <div class="card-grid">
 
-      <div class="p-card top-mint" id="body">
+      <div class="p-card top-mint">
         <div class="p-card-header">
           <div class="p-card-icon icon-mint">💪</div>
           <div class="p-card-meta">
@@ -831,7 +822,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-coral" id="sexual">
+      <div class="p-card top-coral">
         <div class="p-card-header">
           <div class="p-card-icon icon-coral">💙</div>
           <div class="p-card-meta">
@@ -856,7 +847,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-lemon" id="economic">
+      <div class="p-card top-lemon">
         <div class="p-card-header">
           <div class="p-card-icon icon-lemon">💰</div>
           <div class="p-card-meta">
@@ -881,7 +872,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-sky" id="digital">
+      <div class="p-card top-sky">
         <div class="p-card-header">
           <div class="p-card-icon icon-sky">🔒</div>
           <div class="p-card-meta">
@@ -906,7 +897,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-lavender" id="political">
+      <div class="p-card top-lavender">
         <div class="p-card-header">
           <div class="p-card-icon icon-lavender">🗳️</div>
           <div class="p-card-meta">
@@ -931,7 +922,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-peach" id="spiritual">
+      <div class="p-card top-peach">
         <div class="p-card-header">
           <div class="p-card-icon icon-peach">🕊️</div>
           <div class="p-card-meta">
@@ -970,7 +961,7 @@ footer {
     
     <div class="gallery-grid">
       
-      <div class="p-card top-coral gallery-card" id="gallery-item-1">
+      <div class="p-card top-coral gallery-card">
         <div class="p-card-header">
           <div class="p-card-icon icon-coral">🎭</div>
           <div class="p-card-meta">
@@ -982,7 +973,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-sky gallery-card" id="gallery-item-2">
+      <div class="p-card top-sky gallery-card">
         <div class="p-card-header">
           <div class="p-card-icon icon-sky">💪</div>
           <div class="p-card-meta">
@@ -994,7 +985,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-mint gallery-card" id="gallery-item-3">
+      <div class="p-card top-mint gallery-card">
         <div class="p-card-header">
           <div class="p-card-icon icon-mint">🤝</div>
           <div class="p-card-meta">
@@ -1006,7 +997,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-lemon gallery-card" id="gallery-item-4">
+      <div class="p-card top-lemon gallery-card">
         <div class="p-card-header">
           <div class="p-card-icon icon-lemon">🎱</div>
           <div class="p-card-meta">
@@ -1018,7 +1009,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-lavender gallery-card" id="gallery-item-5">
+      <div class="p-card top-lavender gallery-card">
         <div class="p-card-header">
           <div class="p-card-icon icon-lavender">⛪</div>
           <div class="p-card-meta">
@@ -1030,7 +1021,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-peach gallery-card" id="gallery-item-6">
+      <div class="p-card top-peach gallery-card">
         <div class="p-card-header">
           <div class="p-card-icon icon-peach">🐈‍⬛</div>
           <div class="p-card-meta">
@@ -1042,7 +1033,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-coral gallery-card" id="gallery-item-7">
+      <div class="p-card top-coral gallery-card">
         <div class="p-card-header">
           <div class="p-card-icon icon-coral">🐈</div>
           <div class="p-card-meta">
@@ -1054,7 +1045,7 @@ footer {
         </div>
       </div>
       
-      <div class="p-card top-sky gallery-card" id="gallery-item-8">
+      <div class="p-card top-sky gallery-card">
         <div class="p-card-header">
           <div class="p-card-icon icon-sky">❤️</div>
           <div class="p-card-meta">
@@ -1066,7 +1057,7 @@ footer {
         </div>
       </div>
 
-      <div class="p-card top-lemon gallery-card" id="gallery-item-9">
+      <div class="p-card top-lemon gallery-card">
         <div class="p-card-header">
           <div class="p-card-icon icon-lemon">🏦</div>
           <div class="p-card-meta">
@@ -1109,9 +1100,10 @@ footer {
       const targetElem = document.getElementById(targetId);
       
       if (targetElem) {
+        // Adjusts scroll so the section title sits perfectly under the nav
         targetElem.scrollIntoView({
           behavior: 'smooth',
-          block: 'center'
+          block: 'start'
         });
         
         history.pushState(null, null, '#' + targetId);
