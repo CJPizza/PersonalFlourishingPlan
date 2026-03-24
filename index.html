@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -34,6 +34,11 @@ body {
   font-weight: 400;
   line-height: 1.7;
   overflow-x: hidden;
+}
+
+/* Fallback for anchor links if JS is disabled - pushes content down so nav doesn't cover it */
+[id] {
+  scroll-margin-top: 140px; 
 }
 
 /* ── BLOBS ── */
@@ -80,7 +85,7 @@ body {
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   color: var(--text-secondary);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   box-shadow: var(--shadow);
   opacity: 0;
   animation: popIn 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.1s forwards;
@@ -89,12 +94,13 @@ body {
 
 .hero-title {
   font-family: 'Fraunces', serif;
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(4rem, 12vw, 8.5rem);
   font-weight: 900;
-  line-height: 1.0;
+  line-height: 1.05;
   color: var(--text-primary);
   opacity: 0;
   animation: slideUp 0.7s ease 0.3s forwards;
+  margin-bottom: 12px;
 }
 
 .hero-title .highlight {
@@ -110,8 +116,8 @@ body {
 }
 
 .hero-sub {
-  margin-top: 20px;
-  font-size: 1rem;
+  margin-top: 16px;
+  font-size: 1.25rem;
   color: var(--text-secondary);
   font-weight: 300;
   letter-spacing: 0.03em;
@@ -188,27 +194,25 @@ body {
 /* ── NAV ── */
 .nav {
   position: sticky;
-  top: 24px;
+  top: 20px; /* Floats slightly down from the top */
   z-index: 100;
-  background: rgba(247,245,240,0.95);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   border: 1.5px solid var(--border);
-  border-radius: 999px;
-  padding: 4px 28px;
-  margin: 0 auto;
-  width: fit-content;
-  max-width: 95%;
+  border-radius: 999px; /* Fully rounded edges */
+  padding: 8px 24px;
+  margin: 0 auto 40px auto;
+  max-width: 95%; /* Prevents touching the sides on mobile */
+  width: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  box-shadow: var(--shadow-lg); /* Nice floating shadow */
 }
-.nav::-webkit-scrollbar { display: none; }
 .nav-item {
-  padding: 12px 16px;
+  padding: 8px 12px;
   font-size: 0.78rem;
   font-weight: 500;
   color: var(--text-secondary);
@@ -224,7 +228,7 @@ body {
 .wrapper {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 72px 28px;
+  padding: 40px 28px 72px; /* Adjusted top padding due to floating nav */
   position: relative;
   z-index: 1;
 }
@@ -387,7 +391,7 @@ body {
 /* ── CARD GRID ── */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
   gap: 20px;
 }
 
@@ -494,6 +498,39 @@ body {
 /* ── DIM SECTION BG ── */
 .dim-section { background: linear-gradient(180deg, #f0ede8 0%, var(--bg) 100%); }
 
+
+/* ── GALLERY ── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+.gallery-card .p-card-header {
+  padding: 16px 20px;
+}
+.gallery-image-wrapper {
+  flex: 1;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  position: relative;
+}
+.gallery-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gallery-card:hover .gallery-image-wrapper img {
+  transform: scale(1.05);
+}
+
 /* ── FOOTER ── */
 footer {
   text-align: center;
@@ -517,6 +554,7 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 720px) {
+  .nav { border-radius: 16px; padding: 8px; }
   .summary-panel { grid-template-columns: 1fr; }
   .photo-frame { width: 160px; height: 190px; }
   .nk-tabs { flex-direction: column; }
@@ -533,16 +571,16 @@ footer {
 </div>
 
 <section class="hero">
-  <div class="hero-chip"><span class="dot"></span>De La Salle University ·  GEUSELF · Z42 · 2026</div>
+  <div class="hero-chip"><span class="dot"></span> GE USELF · DLSU · 2026</div>
   <h1 class="hero-title">
     My <span class="highlight">Flourishing</span><br/>
     <span class="italic">Plan ✨</span>
   </h1>
-  <p class="hero-sub">Carl Justine Sicat Alamay &nbsp; ·&nbsp;&nbsp; Computer Science Student</p>
+  <p class="hero-sub">Carl Justine S. Alamay &nbsp;·&nbsp; Z42 &nbsp;·&nbsp; CS Student &amp; BSP Intern</p>
   <div class="hero-tags">
     <span class="tag tag-coral">🏋️ Gym Rat</span>
-    <span class="tag tag-sky">💻 Code and Data</span>
-    <span class="tag tag-mint">🐱 Cat Addict</span>
+    <span class="tag tag-sky">💻 Code &amp; Data</span>
+    <span class="tag tag-mint">🐱 Cat Dad</span>
     <span class="tag tag-lemon">🎵 Lady Gaga Fan</span>
     <span class="tag tag-lavender">🤔 Certified Overthinker</span>
   </div>
@@ -565,13 +603,14 @@ footer {
   <a class="nav-item" href="#digital">Digital</a>
   <a class="nav-item" href="#political">Political</a>
   <a class="nav-item" href="#spiritual">Spiritual</a>
+  <a class="nav-item" href="#gallery">My Life</a>
 </nav>
 
 <section id="summary">
   <div class="wrapper">
     <div class="sec-header">
       <div class="sec-emoji">👋</div>
-      <h2 class="sec-title">Hi, I'm CJ!</h2>
+      <h2 class="sec-title">Hi, I'm Carl!</h2>
       <div class="sec-rule"></div>
     </div>
 
@@ -582,7 +621,7 @@ footer {
         </div>
         <div class="photo-badge">
           <div class="pb-name">Carl Justine S. Alamay</div>
-          <div class="pb-sub">GEUSELF · Z42</div>
+          <div class="pb-sub">Z42 · BS Computer Science</div>
         </div>
         <div class="photo-fun-tags">
           <span class="fun-tag">🏦 BSP Intern</span>
@@ -602,14 +641,14 @@ footer {
             <div class="nk-label label-1">Narrative Knowing 1</div>
             <div class="nk-title">The Questioning Mind 🤔</div>
             <p class="nk-body">
-              Descartes' <em>cogito</em> clicked instantly for me — doubting as thinking, thinking as existing. The gym became my lab for self-discovery: Mead's generalized other, Cooley's looking-glass self, and Goffman's performance all playing out while blasting Lady Gaga songs. My family built the invisible scaffolding before I ever stepped foot in that weight room.
+              Descartes' <em>cogito</em> clicked instantly for me — doubting as thinking, thinking as existing[cite: 104, 105]. The gym became my lab for self-discovery: Mead's generalized other, Cooley's looking-glass self, and Goffman's performance all playing out while blasting Lady Gaga songs[cite: 108, 109, 111, 113, 115, 116]. My family built the invisible scaffolding before I ever stepped foot in that weight room[cite: 120].
             </p>
           </div>
           <div class="nk-tab">
             <div class="nk-label label-2">Narrative Knowing 2</div>
             <div class="nk-title">The Constructed Self 🧩</div>
             <p class="nk-body">
-              I am navigating six dimensions. I have a deliberate digital privacy strategy, a masculinity shaped by my father, a foundation-first economic mindset, and a faith that coexists with empiricism. Foucault says power shapes identity — I say it is acknowledged, but not surrendered to. My cats remain offline. Permanently.
+              I am navigating six dimensions[cite: 98]. I have a deliberate digital privacy strategy, a masculinity shaped by my father, a foundation-first economic mindset, and a faith that coexists with empiricism[cite: 80, 87, 92, 96, 97]. Foucault says power shapes identity — I say it is acknowledged, but not surrendered to[cite: 94, 95]. My cats remain offline. Permanently[cite: 81].
             </p>
           </div>
         </div>
@@ -921,6 +960,128 @@ footer {
   </div>
 </section>
 
+<section id="gallery">
+  <div class="wrapper">
+    <div class="sec-header">
+      <div class="sec-emoji">📸</div>
+      <h2 class="sec-title">A Look Into My Life</h2>
+      <div class="sec-rule"></div>
+    </div>
+    
+    <div class="gallery-grid">
+      
+      <div class="p-card top-coral gallery-card" id="gallery-item-1">
+        <div class="p-card-header">
+          <div class="p-card-icon icon-coral">🎭</div>
+          <div class="p-card-meta">
+            <div class="p-card-title">Whatever This Is</div>
+          </div>
+        </div>
+        <div class="gallery-image-wrapper">
+          <img src="Whatever This Is.jpg" alt="Whatever This Is" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="p-card top-sky gallery-card" id="gallery-item-2">
+        <div class="p-card-header">
+          <div class="p-card-icon icon-sky">💪</div>
+          <div class="p-card-meta">
+            <div class="p-card-title">Manly Energy</div>
+          </div>
+        </div>
+        <div class="gallery-image-wrapper">
+          <img src="Manly Energy.jpg" alt="Manly Energy" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="p-card top-mint gallery-card" id="gallery-item-3">
+        <div class="p-card-header">
+          <div class="p-card-icon icon-mint">🤝</div>
+          <div class="p-card-meta">
+            <div class="p-card-title">Me And My Friends</div>
+          </div>
+        </div>
+        <div class="gallery-image-wrapper">
+          <img src="Me And My Friends.jpg" alt="Me And My Friends" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="p-card top-lemon gallery-card" id="gallery-item-4">
+        <div class="p-card-header">
+          <div class="p-card-icon icon-lemon">🎱</div>
+          <div class="p-card-meta">
+            <div class="p-card-title">My Billiards Addiction</div>
+          </div>
+        </div>
+        <div class="gallery-image-wrapper">
+          <img src="My Billiards Addiction.jpg" alt="My Billiards Addiction" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="p-card top-lavender gallery-card" id="gallery-item-5">
+        <div class="p-card-header">
+          <div class="p-card-icon icon-lavender">⛪</div>
+          <div class="p-card-meta">
+            <div class="p-card-title">My Religious Life</div>
+          </div>
+        </div>
+        <div class="gallery-image-wrapper">
+          <img src="My Religious Life.jpg" alt="My Religious Life" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="p-card top-peach gallery-card" id="gallery-item-6">
+        <div class="p-card-header">
+          <div class="p-card-icon icon-peach">🌙</div>
+          <div class="p-card-meta">
+            <div class="p-card-title">Moon</div>
+          </div>
+        </div>
+        <div class="gallery-image-wrapper">
+          <img src="Moon.jpg" alt="Moon" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="p-card top-coral gallery-card" id="gallery-item-7">
+        <div class="p-card-header">
+          <div class="p-card-icon icon-coral">🐱</div>
+          <div class="p-card-meta">
+            <div class="p-card-title">Leon</div>
+          </div>
+        </div>
+        <div class="gallery-image-wrapper">
+          <img src="Leon.jpg" alt="Leon" loading="lazy" />
+        </div>
+      </div>
+      
+      <div class="p-card top-sky gallery-card" id="gallery-item-8">
+        <div class="p-card-header">
+          <div class="p-card-icon icon-sky">❤️</div>
+          <div class="p-card-meta">
+            <div class="p-card-title">Her</div>
+          </div>
+        </div>
+        <div class="gallery-image-wrapper">
+          <img src="Her.jpg" alt="Her" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="p-card top-lemon gallery-card" id="gallery-item-9">
+        <div class="p-card-header">
+          <div class="p-card-icon icon-lemon">🏦</div>
+          <div class="p-card-meta">
+            <div class="p-card-title">Life At BSP</div>
+          </div>
+        </div>
+        <div class="gallery-image-wrapper">
+          <img src="Life At BSP.jpg" alt="Life At BSP" loading="lazy" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-emoji">🌟</div>
   <div class="footer-name">Carl Justine S. Alamay</div>
@@ -935,24 +1096,22 @@ footer {
 </footer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.nav-item').forEach(item => {
-      item.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        // 1. Smoothly scroll the clicked menu item to the center of the navigation bar 
-        this.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-
-        // 2. Smoothly scroll the target section so it centers vertically on the screen
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
+  document.querySelectorAll('.nav-item').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElem = document.getElementById(targetId);
+      
+      if (targetElem) {
+        // This scrolls the exact card/section precisely to the vertical center of your screen
+        targetElem.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
         
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          // Update URL hash without causing an instant jump
-          history.pushState(null, null, '#' + targetId);
-        }
-      });
+        // Updates the URL hash without jumping
+        history.pushState(null, null, '#' + targetId);
+      }
     });
   });
 </script>
